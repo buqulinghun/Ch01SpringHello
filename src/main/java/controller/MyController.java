@@ -11,7 +11,7 @@ public class MyController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("msg", "welcome");
         mv.addObject("fun", "do method");
-        mv.setViewName("WEB-INF/view/show.jsp");
+        mv.setViewName("show");
         System.out.println("dosome method");
         return mv;
     }
