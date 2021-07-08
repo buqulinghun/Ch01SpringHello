@@ -25,4 +25,13 @@ public class MyController {
         mv.setViewName("other");
         return mv;
     }
+
+    @RequestMapping(value="any.do")
+    public ModelAndView doAny() {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("result", "error");
+        mv.addObject("status", "404");
+        mv.setViewName("other");
+        return mv;
+    }
 }

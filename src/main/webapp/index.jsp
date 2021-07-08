@@ -13,6 +13,20 @@
 <body>
 <h3>入门程序</h3>
 <a href="test/some.do">测试doSome</a>
-<a href="test/other.do">测试doOther</a>
+<br/>
+
+<form action="test/other.do" method="post">
+    <input type="submit" value="post请求other.do"/>
+</form>
+<br/>
+
+<a href="test/any.do">GET方式测试any.do</a>
+<br/>
+
+
+<form action="test/any.do" method="post">
+    <input type="submit" value="post请求any.do"/>
+</form>
+<br/>
 </body>
 </html>
