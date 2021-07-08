@@ -4,9 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+@RequestMapping(value = "/test")
 @Controller
 public class MyController {
-    @RequestMapping(value = {"/test/some.do", "/test/first.do"})
+    @RequestMapping(value = {"some.do", "first.do"})
     public ModelAndView dosome() {
         ModelAndView mv = new ModelAndView();
         mv.addObject("msg", "welcome");
@@ -16,7 +17,7 @@ public class MyController {
         return mv;
     }
 
-    @RequestMapping(value={"/test/other.do", "/test/sencond.do"})
+    @RequestMapping(value={"other.do", "sencond.do"})
     public ModelAndView doOther() {
         ModelAndView mv = new ModelAndView();
         mv.addObject("result", "error");
