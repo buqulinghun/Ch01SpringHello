@@ -1,18 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2021/7/4
-  Time: 18:17
+  Date: 2021/7/8
+  Time: 7:24
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>other.jsp</title>
 </head>
 <body>
-<h3>入门程序</h3>
-<a href="test/some.do">测试doSome</a>
-<a href="test/other.do">测试doOther</a>
+    <h3>WEB-INF\view\other.jsp</h3>
+    <h3>result:${result}</h3>
+    <h3>status:${status}</h3>
 </body>
 </html>
