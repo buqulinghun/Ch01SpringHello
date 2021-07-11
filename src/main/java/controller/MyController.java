@@ -41,13 +41,11 @@ public class MyController {
     }
 
     @RequestMapping(value="parmters.do")
-    public ModelAndView doParamters(HttpServletRequest request,
-                                    HttpServletResponse resonpse,
-                                    HttpSession session) {
+    public ModelAndView doParamters(String name, Integer age) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("name", request.getParameter("name"));
-        mv.addObject("age", request.getParameter("age"));
-
+        mv.addObject("name", name);
+        mv.addObject("age", age);
+        System.out.println("name:"+name+" age:"+age);
         mv.setViewName("parameterreceive");
         return mv;
     }
