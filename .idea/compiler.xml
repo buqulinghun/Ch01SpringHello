@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Ch01SpringHello" />
-        <module name="WebRoot" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="WebRoot" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

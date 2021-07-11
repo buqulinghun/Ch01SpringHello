@@ -3,6 +3,7 @@ package controller;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +47,18 @@ public class MyController {
         mv.addObject("name", name);
         mv.addObject("age", age);
         System.out.println("name:"+name+" age:"+age);
+        mv.setViewName("parameterreceive");
+        return mv;
+    }
+
+
+    @RequestMapping(value="mispatchparmters.do")
+    public ModelAndView doMispatchParamters(@RequestParam("rname") String name,
+                                            @RequestParam("rage") Integer age) {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("name", name);
+        mv.addObject("age", age);
+        System.out.println("rname:"+name+" rage:"+age);
         mv.setViewName("parameterreceive");
         return mv;
     }
