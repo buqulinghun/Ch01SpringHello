@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import vo.Student;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -61,5 +62,19 @@ public class MyController {
         System.out.println("rname:"+name+" rage:"+age);
         mv.setViewName("parameterreceive");
         return mv;
+    }
+
+    @RequestMapping(value="receiveobject.do")
+    public ModelAndView receviceOjb(Student st) {
+        System.out.println("receviceOjb st:"+st);
+
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("name", st.getName());
+        mv.addObject("age", st.getAge());
+        mv.addObject("student", st);
+
+        mv.setViewName("showobj");
+        return mv;
+
     }
 }

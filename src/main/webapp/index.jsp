@@ -54,5 +54,13 @@
 
     <input type="submit" value="提交参数">
 </form>
+
+<h3>对象接收参数设置</h3>
+<form action="test/receiveobject.do" method="post">
+    姓名：<input type="text" name="name"> <br>
+    年龄：<input type="text" name="age"> <br>
+
+    <input type="submit" value="提交参数">
+</form>
 </body>
 </html>
