@@ -75,6 +75,13 @@ public class MyController {
 
         mv.setViewName("showobj");
         return mv;
+    }
 
+    @RequestMapping(value="returnstring.do")
+    public String doReturnString(HttpServletRequest request, String name, Integer age) {
+        System.out.println("doReturnString name:"+name+" age:"+age);
+        request.setAttribute("name", name);
+        request.setAttribute("age", age);
+        return "showReturnString";
     }
 }
