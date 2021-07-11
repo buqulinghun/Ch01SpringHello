@@ -53,8 +53,8 @@ public class MyController {
 
 
     @RequestMapping(value="mispatchparmters.do")
-    public ModelAndView doMispatchParamters(@RequestParam("rname") String name,
-                                            @RequestParam("rage") Integer age) {
+    public ModelAndView doMispatchParamters(@RequestParam(value="rname",required = false) String name,
+                                            @RequestParam(value="rage",required = false) Integer age) {
         ModelAndView mv = new ModelAndView();
         mv.addObject("name", name);
         mv.addObject("age", age);
