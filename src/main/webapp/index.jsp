@@ -15,9 +15,10 @@
             $("button").click(function(){
                // alert("buton click")
                 $.ajax({
-                    url:"test/returnvoid-ajax.do",
+                   // url:"test/returnvoid-ajax.do",
+                    url:"test/returnobject-ajax.do",
                     data:{
-                        name:"zhangsan",
+                        name:"lisi",
                         age:23
                     },
                     type:"post",

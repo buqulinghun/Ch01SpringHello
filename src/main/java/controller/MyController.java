@@ -5,6 +5,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import vo.Student;
 
@@ -109,7 +110,14 @@ public class MyController {
                 pw.close();
             }
         }
+    }
 
 
+
+   @RequestMapping(value = "returnobject-ajax.do")
+   @ResponseBody
+    public Student doReturnObjectAjax(Student st){
+       System.out.println("doReturnObj st:"+st);
+       return st;
     }
 }
