@@ -1,5 +1,6 @@
 package controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import vo.Student;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 
 @RequestMapping(value = "/test")
 @Controller
@@ -83,5 +85,31 @@ public class MyController {
         request.setAttribute("name", name);
         request.setAttribute("age", age);
         return "showReturnString";
+    }
+
+    @RequestMapping(value="returnvoid-ajax.do")
+    public void doReturnVoidToString(HttpServletResponse response, String name, String age) {
+        Student st = new Student();
+        st.setName(name);
+        st.setAge(age);
+
+
+        response.setContentType("application/json;charset=utf-8");
+
+        ObjectMapper om = new ObjectMapper();
+        PrintWriter pw = null;
+        try {
+                String json = om.writeValueAsString(st);
+                pw = response.getWriter();
+                pw.write(json);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (pw != null) {
+                pw.close();
+            }
+        }
+
+
     }
 }

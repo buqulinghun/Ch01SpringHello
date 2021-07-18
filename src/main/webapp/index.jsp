@@ -9,6 +9,26 @@
 <html>
 <head>
     <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            $("button").click(function(){
+               // alert("buton click")
+                $.ajax({
+                    url:"test/returnvoid-ajax.do",
+                    data:{
+                        name:"zhangsan",
+                        age:23
+                    },
+                    type:"post",
+                    dataType:"json",
+                    success:function(resp){
+                        alert(resp);
+                    }
+                })
+            })
+        })
+    </script>
 </head>
 <body>
 <h3>入门程序</h3>
@@ -70,5 +90,9 @@
 
     <input type="submit" value="提交参数">
 </form>
+
+<br/>
+
+<button id="btn">发起ajax请求</button>
 </body>
 </html>
