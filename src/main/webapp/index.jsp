@@ -16,7 +16,8 @@
                // alert("buton click")
                 $.ajax({
                    // url:"test/returnvoid-ajax.do",
-                    url:"test/returnobject-ajax.do",
+                   // url:"test/returnobject-ajax.do",
+                    url:"test/returnobjarray.do",
                     data:{
                         name:"lisi",
                         age:23
@@ -24,7 +25,10 @@
                     type:"post",
                     dataType:"json",
                     success:function(resp){
-                        alert(resp);
+                        //alert(resp);
+                        $.each(resp, function (i, obj){
+                            alert(obj.name+" "+obj.age)
+                        })
                     }
                 })
             })

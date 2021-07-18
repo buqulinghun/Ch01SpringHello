@@ -3,6 +3,7 @@ package controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 @RequestMapping(value = "/test")
 @Controller
@@ -112,12 +115,27 @@ public class MyController {
         }
     }
 
-
-
    @RequestMapping(value = "returnobject-ajax.do")
    @ResponseBody
     public Student doReturnObjectAjax(Student st){
        System.out.println("doReturnObj st:"+st);
        return st;
+    }
+
+    @RequestMapping(value="returnobjarray.do")
+    @ResponseBody
+    public List<Student> doReturnObjArray(String name, String age) {
+        List<Student> students = new ArrayList<>();
+        Student st1 = new Student();
+        st1.setName("zhangsan");
+        st1.setAge("21");
+        students.add(st1);
+
+        Student st2 = new Student();
+        st2.setName("lisi");
+        st2.setAge("34");
+        students.add(st2);
+
+        return students;
     }
 }
