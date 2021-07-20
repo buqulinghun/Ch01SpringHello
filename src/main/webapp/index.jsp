@@ -105,7 +105,7 @@
 
 <button id="btn">发起ajax请求</button>
 
-<img src="images/p3.jpeg" alt="这是一个静态资源">
+<img src="static/images/p3.jpeg" alt="这是一个静态资源">
 
 </body>
 </html>
