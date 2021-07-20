@@ -42,7 +42,7 @@
 </head>
 <body>
 <h3>入门程序</h3>
-<a href="test/some.do">测试doSome</a>
+<a href="${pageContext.request.contextPath}/test/some.do">测试doSome</a>
 <br/>
 
 <form action="test/other.do" method="post">
