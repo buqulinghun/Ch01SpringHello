@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping(value = "/test")
 @Controller
 public class MyController {
-    @RequestMapping(value = {"some.do", "first.do"})
+    @RequestMapping(value = {"/some.do", "first.do"})
     public ModelAndView dosome() {
         ModelAndView mv = new ModelAndView();
         mv.addObject("msg", "welcome");

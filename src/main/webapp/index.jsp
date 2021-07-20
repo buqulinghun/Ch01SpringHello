@@ -6,9 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String basepath = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort() +
+              request.getContextPath()  + "/";
+%>
 <html>
 <head>
     <title>Title</title>
+
+    <base href="<%=basepath%>"/>
+
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
     <script type="text/javascript">
         $(function (){
@@ -42,7 +50,10 @@
 </head>
 <body>
 <h3>入门程序</h3>
+<!--
 <a href="${pageContext.request.contextPath}/test/some.do">测试doSome</a>
+-->
+<a href="test/some.do">测试doSome</a>
 <br/>
 
 <form action="test/other.do" method="post">
