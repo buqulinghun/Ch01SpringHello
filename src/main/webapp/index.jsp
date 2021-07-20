@@ -17,18 +17,23 @@
                 $.ajax({
                    // url:"test/returnvoid-ajax.do",
                    // url:"test/returnobject-ajax.do",
-                    url:"test/returnobjarray.do",
+                   // url:"test/returnobjarray.do",
+                    url:"test/returnstring.do",
                     data:{
                         name:"lisi",
                         age:23
                     },
                     type:"post",
-                    dataType:"json",
+                   // dataType:"json",
+                    dataType:"text",
                     success:function(resp){
                         //alert(resp);
-                        $.each(resp, function (i, obj){
-                            alert(obj.name+" "+obj.age)
-                        })
+
+                        //$.each(resp, function (i, obj){
+                        //   alert(obj.name+" "+obj.age)
+                       // })
+
+                        alert("resp:"+resp);
                     }
                 })
             })
@@ -99,5 +104,8 @@
 <br/>
 
 <button id="btn">发起ajax请求</button>
+
+<img src="images/p3.jpeg" alt="这是一个静态资源">
+
 </body>
 </html>

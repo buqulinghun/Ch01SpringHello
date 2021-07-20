@@ -138,4 +138,10 @@ public class MyController {
 
         return students;
     }
+
+    @RequestMapping(value="returnstring.do",produces = "text/plain;charset=utf-8")
+    @ResponseBody
+    public String doReturnString(String name, String age){
+        return "返回文本字符串测试";
+    }
 }

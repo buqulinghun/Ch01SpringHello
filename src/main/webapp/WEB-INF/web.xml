@@ -19,7 +19,7 @@
 
     <servlet-mapping>
         <servlet-name>spingmvcweb</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <!--注册声明过滤器，解决post参数乱码问题 -->
